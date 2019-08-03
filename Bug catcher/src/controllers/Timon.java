@@ -6,7 +6,7 @@ public class Timon extends Character{
 
 	public Timon(int x, int y, int xspeed, int yspeed, int height, int width) {
 		super(x, y, xspeed, yspeed, width, height);
-		loadSpritesheet("C:\\Users\\xX-Ch\\OneDrive\\Escritorio\\timon.png");
+		loadSpritesheet("/Resourses/timon.png");
 		while(spritesheet == null)
 			;
 		System.out.println("Spritesheet loaded: Timon");

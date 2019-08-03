@@ -47,7 +47,7 @@ public class Character {
 	protected void loadSpritesheet(String path) {
 		try {
 //			"D:\\work\\files\\logo.jpg"
-			spritesheet = ImageIO.read(new File(path));
+			spritesheet = ImageIO.read(Character.class.getResource(path));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

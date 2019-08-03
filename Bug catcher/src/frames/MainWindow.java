@@ -13,6 +13,7 @@ import controllers.GameEngine;
 import panels.GamePanel;
 import panels.MenuPanel;
 
+@SuppressWarnings("serial")
 public class MainWindow extends JFrame {
 	
 	private static JPanel mainPan;

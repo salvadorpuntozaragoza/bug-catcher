@@ -7,7 +7,7 @@ public class Pumba extends Character {
 	
 	public Pumba(int x, int y, int xspeed, int yspeed, int height, int width) {
 		super(x, y, xspeed, yspeed, width, height);
-		loadSpritesheet("C:\\Users\\xX-Ch\\OneDrive\\Escritorio\\pumba2.png");
+		loadSpritesheet("/Resourses/pumba2.png");
 		while(spritesheet == null)
 			;
 		System.out.println("Spritesheet loaded: Pumba");
