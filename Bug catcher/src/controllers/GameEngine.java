@@ -54,6 +54,7 @@ public class GameEngine implements Runnable {
 	
 	private static void render() {
 		gamePan.repaint();
+		gamePan.getScoreLabel().repaint();
 	}
 
 }

@@ -1,9 +1,12 @@
 package controllers;
 
+import panels.GamePanel;
+
 public class Animation implements Runnable{
 	
 	private Thread t;
 	private Character character;
+	private GamePanel gp;
 	private String charName;
 	private int i;
 	private double j;
@@ -19,6 +22,15 @@ public class Animation implements Runnable{
 		t.start();
 	}
 	
+	public Animation(GamePanel gp, String name, int fps) {
+		this.gp = gp;
+		this.charName = name;
+		this.fps = (int) (1000 / fps);
+		i = 0;
+		t = new Thread(this);
+		t.start();
+	}
+	
 	public void run() {
 		while(true) {	
 			
@@ -27,6 +39,9 @@ public class Animation implements Runnable{
 			
 			if(charName.equals("Timon"))
 				animateTimon();
+			
+			if(charName.equals("bg"))
+				animateBG();
 			
 			try {
 				Thread.sleep(fps);
@@ -89,5 +104,13 @@ public class Animation implements Runnable{
 			if(i == 4)
 				i = 0;
 		}
+	}
+	
+	private void animateBG() {
+		gp.setImage(gp.getSpriteSheet().getSubimage(600 * i, 0, 600, 600));
+		i++;
+		
+		if(i == 4)
+			i = 0;
 	}
 }
